@@ -7,7 +7,6 @@ const char* MinorColorNames[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
 int numberOfMajorColors = sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
 int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
-const int MAX_COLORPAIR_NAME_CHARS = 16;
 
 void ColorPairToString(const ColorPair* colorPair, char* buffer) {
     sprintf(buffer, "%s %s",
@@ -30,7 +29,7 @@ int GetPairNumberFromColor(const ColorPair* colorPair) {
             colorPair->minorColor + 1;
 }
 
-void PrintColorCodeManual() {
+void PrintColorCodeManual(void) {
     printf("Color Code Manual:\n");
     for (int i = 1; i <= numberOfMajorColors * numberOfMinorColors; ++i) {
         ColorPair colorPair = GetColorFromPairNumber(i);
